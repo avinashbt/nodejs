@@ -10,8 +10,7 @@ const eventEmitter = new event.EventEmitter();
 eventEmitter.on("eventName", (data) => {
   console.log("Event Fired: ", data);
 });
-
-// Create
+ 
 eventEmitter.on("eventName", (data) => {
   console.log("Event Fired: ", data);
 });
