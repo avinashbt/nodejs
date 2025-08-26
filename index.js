@@ -9,6 +9,9 @@
 // console.log(multiply(9, 10));
 
 const http = require('http');
+const fs = require('fs');
+
+const myfile = fs.readFileSync('./index.html', 'utf-8');
 
 const server = http.createServer((req,res)=>{
 console.log("Request is made from browser to server");
@@ -23,6 +26,11 @@ console.log("Request is made from browser to server");
 // res.writeHead(200,{"content-type": "application/json"})
 
 // res.end(JSON.stringify(obj));
+
+res.writeHead(200,{"content-type": "text/html"})
+
+res.end(myfile)
+
 });
 
 server.listen(3000, ()=>{
